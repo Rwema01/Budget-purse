@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUDGET PULSE</title>
+    <link rel="stylesheet" href="style1.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>BUDGET PULSE</h1>
+    </header>
+    
+    <div class="container">
+        <section class="input-section">
+            <h2>TRACK SPENDING</h2>
+            <form id="expense-form">
+                <div class="input-group">
+                    <input type="text" id="description" placeholder="Payment note" pattern="[A-Za-z ]+" title="Letters only" required>
+                </div>
+                <div class="input-group">
+                    <input type="number" id="amount" placeholder="Amount ($)" step="0.01" min="0" pattern="\d+(\.\d{1,2})?" title="Numbers only" required>
+                </div>
+                <button type="submit">ADD EXPENSE</button>
+            </form>
+        </section>
+        
+        <hr class="section-divider">
+        
+        <section class="expenses-section">
+            <h2>SPENDING OVERVIEW</h2>
+            <div class="expenses-header">
+                <span class="column-payment">PAYMENT NOTE</span>
+                <span class="column-divider"></span>
+                <span class="column-amount">AMOUNT</span>
+                <span class="column-divider"></span>
+                <span class="column-action">ACTION</span>
+            </div>
+            <ul id="expense-list"></ul>
+        </section>
+        
+        <hr class="section-divider">
+        
+        <section class="financial-section">
+            <h2>MARKET INSIGHTS</h2>
+            <div id="financial-data">
+                <div class="loading-spinner"></div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 BUDGET PULSE. All rights reserved.</p>
+    </footer>
+
+    <script src="script1.js"></script>
+</body>
+</html>
