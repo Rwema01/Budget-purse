@@ -3,9 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BUDGET PULSE</title>
-    <link rel="stylesheet" href="style.css">
+    <title>BUDGET PULSE - Personal Finance Tracker</title>
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- CSS with cache-busting -->
+    <link rel="stylesheet" href="style.css?v=1.1">
+    <!-- Preloaded Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Fallback styles if CSS fails -->
+    <noscript>
+        <style>
+            body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 20px; }
+            .container { max-width: 800px; margin: 0 auto; }
+            header { text-align: center; margin-bottom: 30px; }
+            .section-divider { margin: 30px 0; border: 1px solid #eee; }
+        </style>
+    </noscript>
 </head>
 <body>
     <header>
@@ -13,39 +28,56 @@
     </header>
     
     <div class="container">
-        <section class="input-section">
-            <h2>TRACK SPENDING</h2>
+        <!-- Expense Input Section -->
+        <section class="input-section" aria-labelledby="tracker-heading">
+            <h2 id="tracker-heading">TRACK SPENDING</h2>
             <form id="expense-form">
                 <div class="input-group">
-                    <input type="text" id="description" placeholder="Payment note" pattern="[A-Za-z ]+" title="Letters only" required>
+                    <input type="text" 
+                           id="description" 
+                           aria-label="Payment note description"
+                           placeholder="Payment note" 
+                           pattern="[A-Za-z ]+" 
+                           title="Letters only" 
+                           required>
                 </div>
                 <div class="input-group">
-                    <input type="number" id="amount" placeholder="Amount ($)" step="0.01" min="0" pattern="\d+(\.\d{1,2})?" title="Numbers only" required>
+                    <input type="number" 
+                           id="amount" 
+                           aria-label="Expense amount in dollars"
+                           placeholder="Amount ($)" 
+                           step="0.01" 
+                           min="0" 
+                           pattern="\d+(\.\d{1,2})?" 
+                           title="Numbers only" 
+                           required>
                 </div>
                 <button type="submit">ADD EXPENSE</button>
             </form>
         </section>
         
-        <hr class="section-divider">
+        <hr class="section-divider" aria-hidden="true">
         
-        <section class="expenses-section">
-            <h2>SPENDING OVERVIEW</h2>
+        <!-- Expenses List Section -->
+        <section class="expenses-section" aria-labelledby="overview-heading">
+            <h2 id="overview-heading">SPENDING OVERVIEW</h2>
             <div class="expenses-header">
                 <span class="column-payment">PAYMENT NOTE</span>
-                <span class="column-divider"></span>
+                <span class="column-divider" aria-hidden="true"></span>
                 <span class="column-amount">AMOUNT</span>
-                <span class="column-divider"></span>
+                <span class="column-divider" aria-hidden="true"></span>
                 <span class="column-action">ACTION</span>
             </div>
-            <ul id="expense-list"></ul>
+            <ul id="expense-list" aria-live="polite"></ul>
         </section>
         
-        <hr class="section-divider">
+        <hr class="section-divider" aria-hidden="true">
         
-        <section class="financial-section">
-            <h2>MARKET INSIGHTS</h2>
-            <div id="financial-data">
-                <div class="loading-spinner"></div>
+        <!-- Market Data Section -->
+        <section class="financial-section" aria-labelledby="market-heading">
+            <h2 id="market-heading">MARKET INSIGHTS</h2>
+            <div id="financial-data" aria-live="polite">
+                <div class="loading-spinner" aria-hidden="true"></div>
             </div>
         </section>
     </div>
@@ -54,6 +86,14 @@
         <p>&copy; 2025 BUDGET PULSE. All rights reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- JavaScript with cache-busting -->
+    <script src="script.js?v=1.1"></script>
+    
+    <!-- NoScript Fallback -->
+    <noscript>
+        <div class="noscript-warning">
+            <p>⚠️ JavaScript is required for full functionality. Please enable it to use this app.</p>
+        </div>
+    </noscript>
 </body>
 </html>
